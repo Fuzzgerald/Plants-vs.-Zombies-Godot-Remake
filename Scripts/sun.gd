@@ -1,6 +1,5 @@
+﻿class_name Sun
 extends Area2D
-
-class_name Sun
 
 @export var fall_speed:int
 @export var arc_height: int
@@ -10,11 +9,11 @@ class_name Sun
 @export var lifetime: float
 @export var fade_duration: float
 
-@onready var timer = $Timer
-
 var sun_value = 25
 var start_pos: Vector2
 var target_pos: Vector2
+
+@onready var timer = $Timer
 
 func _ready() -> void:
 	timer.wait_time = lifetime

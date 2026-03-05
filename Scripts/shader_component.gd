@@ -1,6 +1,5 @@
+﻿class_name ShaderComponent
 extends Node2D
-
-class_name ShaderComponent
 
 @export var affected_sprites: Array[CanvasItem]
 

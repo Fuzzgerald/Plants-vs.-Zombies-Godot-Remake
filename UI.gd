@@ -1,8 +1,8 @@
-extends Node2D
-
-@onready var pause_menu: Control = $PauseMenu
+﻿extends Node2D
 
 var paused: bool
+
+@onready var pause_menu: Control = $PauseMenu
 
 func _pause_game():
 	if paused:

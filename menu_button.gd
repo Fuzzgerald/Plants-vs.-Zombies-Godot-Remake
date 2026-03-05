@@ -1,16 +1,16 @@
-extends Control
+﻿extends Control
 
-@onready var shader_component: ShaderComponent = $ShaderComponent
+enum functions {
+	pause,
+	unpause,
+	load_scene,
+}
 
 @export var function_type: functions
 @export var white_strength: float = 0.25
 @export var load_scene: PackedScene
 
-enum functions{
-	pause,
-	unpause,
-	load_scene,
-}
+@onready var shader_component: ShaderComponent = $ShaderComponent
 
 func _gui_input(event: InputEvent) -> void:
 	
@@ -40,3 +40,4 @@ func _get_function():
 			game_mngr._load_scene(load_scene)
 			ui_manager._unpause()
 			
+

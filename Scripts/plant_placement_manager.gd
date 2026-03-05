@@ -1,6 +1,13 @@
+﻿class_name PlantPlacementManager
 extends Node2D
 
-class_name PlantPlacementManager
+signal value_changed
+
+enum click_types {
+	none, 
+	plant,
+	shovel
+}
 
 var total_sun: int = 50
 var plant_cost: int
@@ -8,14 +15,6 @@ var seed_packet: SeedPacket
 var plant_type: PackedScene
 var silhouettte: PackedScene
 var click_type: click_types
-
-enum click_types{
-	none, 
-	plant,
-	shovel
-}
-
-signal value_changed
 
 func _ready() -> void:
 	game_mngr.plant_mngr = self
@@ -88,3 +87,4 @@ func _change_click(type: click_types):
 			
 		click_types.shovel:
 			_clear_current_plant()
+

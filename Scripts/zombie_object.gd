@@ -1,6 +1,5 @@
+﻿class_name ZombieObject
 extends Node2D
-
-class_name ZombieObject
 
 @export var arc_distance: float 
 @export var arc_y_offset: float 
@@ -8,10 +7,10 @@ class_name ZombieObject
 @export var arc_duration: float 
 @export var rotation_amount: float = 180
 
-@onready var sprite: Node2D = $Sprite2D
-
 var start_pos: Vector2
 var target_pos: Vector2
+
+@onready var sprite: Node2D = $Sprite2D
 
 
 func _ready() -> void:

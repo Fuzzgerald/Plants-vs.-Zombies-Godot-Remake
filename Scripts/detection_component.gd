@@ -1,20 +1,19 @@
+﻿class_name DetectionComponent
 extends Area2D
 
-class_name DetectionComponent
+signal target_connected 
+
+enum target_types {
+	plants,
+	zombies
+}
 
 @export var target_type: target_types
 @export var max_x: int = 325
 
-signal target_connected 
-
 var pending_bodies: Array[Node2D] = []
 var bodies_in_range: Array[Node2D] = []
 var target_body: Node2D
-
-enum target_types{
-	plants,
-	zombies
-}
 
 func _ready() -> void:
 	area_entered.connect(_area_entered)
@@ -114,3 +113,4 @@ func _choose_target():
 	target_body = bodies_in_range[0]
 	target_connected.emit()
 	
+

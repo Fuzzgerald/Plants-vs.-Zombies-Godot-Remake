@@ -1,6 +1,5 @@
+﻿class_name Wave
 extends Resource
-
-class_name Wave
 
 @export var zombies: Array[ZombieData]
 @export var can_autostart: bool = false

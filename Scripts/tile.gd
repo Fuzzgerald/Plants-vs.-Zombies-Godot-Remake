@@ -1,6 +1,5 @@
+﻿class_name Tile
 extends Area2D
-
-class_name Tile
 
 @export var marker: Marker2D
 @export var highlight: ColorRect
@@ -76,3 +75,4 @@ func _on_mouse_exited() -> void:
 	if current_plant:
 		
 		current_plant.health_component.shader._set_white(0)
+

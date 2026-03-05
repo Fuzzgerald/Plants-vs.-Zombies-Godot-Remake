@@ -1,11 +1,11 @@
-extends Node2D
+﻿extends Node2D
+
+@export var load_scene: PackedScene
 
 var plant_mngr: PlantPlacementManager
 var zombie_mngr: ZombieManager
 
 var current_scene: Node2D
-
-@export var load_scene: PackedScene
 
 func _ready() -> void:
 	_load_scene(load_scene)

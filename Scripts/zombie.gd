@@ -1,15 +1,15 @@
+﻿class_name Zombie
 extends Node2D
 
-class_name Zombie
+enum ZombieState {
+	WALK,
+	EAT,
+}
 
 @export var max_speed: int
 @export var zombie_damage: int
 @export var stage_manager: ZombieStageManager
 @export var shader: ShaderComponent
-
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var health_component: HealthComponent = $HealthComponent
-@onready var detection_component: DetectionComponent = $DetectionComponent
 
 var speed: int
 var target_plant: Plant
@@ -21,10 +21,9 @@ var checks_cleared: bool
 
 var overlapping_plants: Array[Plant] = []
 
-enum ZombieState {
-	WALK,
-	EAT,
-}
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var health_component: HealthComponent = $HealthComponent
+@onready var detection_component: DetectionComponent = $DetectionComponent
 
 func _ready() -> void:
 	speed = max_speed

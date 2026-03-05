@@ -1,15 +1,14 @@
+﻿class_name HealthComponent
 extends Node2D
 
-class_name HealthComponent
+signal damage_taken
+signal died
 
 @export var max_health: int
 @export var shader: ShaderComponent
 
 var health: int
 var timer: SceneTreeTimer
-
-signal damage_taken
-signal died
 
 func _ready() -> void:
 	health = max_health

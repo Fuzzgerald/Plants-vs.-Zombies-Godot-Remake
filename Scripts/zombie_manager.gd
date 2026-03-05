@@ -1,10 +1,9 @@
+﻿class_name ZombieManager
 extends Node2D
 
-class_name ZombieManager
+signal checks_cleared
 
 @export var wave_preset: WavePreset
-
-@onready var timer:= $Timer
 
 var zombies: Array[ZombieData] = []
 var lanes: Array[ZombieSpawner] = []
@@ -17,7 +16,7 @@ var current_wave: Wave
 var amount_of_waves: int
 var progress: float = 0.0
 
-signal checks_cleared
+@onready var timer:= $Timer
 
 func _ready() -> void:
 	game_mngr.zombie_mngr = self

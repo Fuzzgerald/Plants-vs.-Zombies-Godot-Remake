@@ -1,8 +1,8 @@
-extends Node2D
-
-@onready var shader: ShaderComponent = $ShaderComponent
+﻿extends Node2D
 
 var current_progress: float = 0.0
+
+@onready var shader: ShaderComponent = $ShaderComponent
 
 func _process(delta: float) -> void:
 	

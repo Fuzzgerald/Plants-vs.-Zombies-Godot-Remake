@@ -1,20 +1,18 @@
+﻿class_name SeedPacket
 extends Control
-
-class_name SeedPacket
 
 @export var plant_type: PackedScene
 @export var sun_cost: int
 @export var cooldown_time: float
 @export var silhouette: PackedScene
 
-@onready var timer = $CooldownTimer
-@onready var label: Label = $Label
-@onready var shader: ShaderComponent = $ShaderComponent
-
 var can_afford: bool
 var on_cooldown: bool = false
 var is_selected: bool 
 
+@onready var timer = $CooldownTimer
+@onready var label: Label = $Label
+@onready var shader: ShaderComponent = $ShaderComponent
 
 func _ready() -> void:
 	label.text = str(sun_cost)
@@ -86,3 +84,4 @@ func _cooldown_finished():
 	on_cooldown = false
 	
 	
+

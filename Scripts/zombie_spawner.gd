@@ -1,16 +1,15 @@
+﻿class_name ZombieSpawner
 extends Node2D
-
-class_name ZombieSpawner
 
 @export var quick_wait: float
 @export var regular_wait: float
 
-@onready var timer : Timer = $Timer
-@onready var spawn_point := $SpawnPoint
-
 var zombie_queue: Array[PackedScene] = []
 
 var zombie_count: int
+
+@onready var timer : Timer = $Timer
+@onready var spawn_point := $SpawnPoint
 
 func _ready() -> void:
 	timer.timeout.connect(_timer_ended)
