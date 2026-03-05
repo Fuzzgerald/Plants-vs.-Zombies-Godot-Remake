@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://duwynkmnniatk"]
+
+[ext_resource type="Texture2D" uid="uid://c7wvshbuoy0b0" path="res://PvZ Sprites/Peashooter Sprite.png" id="1_5dhdy"]
+
+[node name="PeashooterSilh" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.49019608)
+position = Vector2(0, -8)
+texture = ExtResource("1_5dhdy")
+hframes = 7

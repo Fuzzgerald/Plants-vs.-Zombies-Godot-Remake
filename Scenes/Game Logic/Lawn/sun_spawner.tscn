@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvpr6buf3afdh"]
+
+[ext_resource type="Script" uid="uid://bbp4x2gnhum3y" path="res://Scripts/sun_spawner.gd" id="1_msgff"]
+
+[node name="SunSpawner" type="Marker2D" node_paths=PackedStringArray("starting_height", "spawn_pos_x", "spawn_pos_y", "timer")]
+script = ExtResource("1_msgff")
+starting_height = NodePath("StartingHeight")
+spawn_pos_x = NodePath("SpawnPosX")
+spawn_pos_y = NodePath("SpawnPosY")
+timer = NodePath("SpawnTimer")
+min_spawn_time = 12
+max_spawn_time = 15
+
+[node name="StartingHeight" type="Marker2D" parent="."]
+position = Vector2(0, -60)
+
+[node name="SpawnPosX" type="Marker2D" parent="."]
+position = Vector2(221, 0)
+
+[node name="SpawnPosY" type="Marker2D" parent="."]
+position = Vector2(0, 150)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]

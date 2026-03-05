@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hwbg5itxwrgi"]
+
+[ext_resource type="Script" uid="uid://cvt8b5m3ljm2e" path="res://Scripts/y_sort_component.gd" id="1_v6unw"]
+
+[node name="Y_SortComponent" type="Node2D"]
+script = ExtResource("1_v6unw")

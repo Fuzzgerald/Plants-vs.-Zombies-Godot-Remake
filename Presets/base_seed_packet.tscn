@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://kb4603igeiwg"]
+
+[ext_resource type="Script" uid="uid://bvl5mf064jhgt" path="res://Scripts/seed_packet.gd" id="1_y0jwm"]
+[ext_resource type="Shader" uid="uid://od5bqyi64hk3" path="res://Extras/seed_shader.gdshader" id="2_d7ks1"]
+[ext_resource type="Texture2D" uid="uid://dcl7xdtwupmic" path="res://PvZ Sprites/Peashooter Seed.png" id="3_6cqr3"]
+[ext_resource type="PackedScene" uid="uid://bpt3oi4olyq6r" path="res://Components/shader_component.tscn" id="4_wde7m"]
+[ext_resource type="FontFile" uid="uid://wxu2js1tk0vj" path="res://Extras/PvZFont (2).ttf" id="5_rajad"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l6ht5"]
+resource_local_to_scene = true
+shader = ExtResource("2_d7ks1")
+shader_parameter/cooldown_ratio = 0.0
+shader_parameter/can_afford = 1.0
+shader_parameter/is_selected = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_qvo6i"]
+font = ExtResource("5_rajad")
+
+[node name="BaseSeedPacket" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 24.0
+offset_bottom = 20.0
+script = ExtResource("1_y0jwm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_l6ht5")
+position = Vector2(12, 9)
+texture = ExtResource("3_6cqr3")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("affected_sprites") instance=ExtResource("4_wde7m")]
+affected_sprites = [NodePath("../Sprite2D")]
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 19.0
+text = "123"
+label_settings = SubResource("LabelSettings_qvo6i")
+horizontal_alignment = 2
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

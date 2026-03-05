@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://mp4hgvm71tye"]
+
+[ext_resource type="PackedScene" uid="uid://kb4603igeiwg" path="res://Presets/base_seed_packet.tscn" id="1_5gs3l"]
+[ext_resource type="PackedScene" uid="uid://bigt5ymyhjh01" path="res://Plants/wallnut.tscn" id="2_i4ktv"]
+[ext_resource type="Shader" uid="uid://od5bqyi64hk3" path="res://Extras/seed_shader.gdshader" id="3_ktqau"]
+[ext_resource type="PackedScene" uid="uid://cd23ujoq7pyct" path="res://Silhouettes/wallnut_silh.tscn" id="3_sa7ag"]
+[ext_resource type="Texture2D" uid="uid://ymwun7ftcwpm" path="res://PvZ Sprites/Wallnut Seed.png" id="4_kjsue"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5orn3"]
+resource_local_to_scene = true
+shader = ExtResource("3_ktqau")
+shader_parameter/cooldown_ratio = 0.0
+shader_parameter/can_afford = 1.0
+shader_parameter/is_selected = 0.0
+
+[node name="WallnutSeed" instance=ExtResource("1_5gs3l")]
+plant_type = ExtResource("2_i4ktv")
+sun_cost = 50
+cooldown_time = 30.0
+silhouette = ExtResource("3_sa7ag")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_5orn3")
+texture = ExtResource("4_kjsue")
+offset = Vector2(0, -0.5)
+
+[node name="Label" parent="." index="2"]
+text = "50"

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://m12q8d3rpp26"]
+
+[ext_resource type="Script" uid="uid://b06bc35o3m6hu" path="res://Scripts/sun_display.gd" id="1_fy58x"]
+[ext_resource type="Texture2D" uid="uid://cpvel3wj7ll7s" path="res://PvZ Sprites/Sun Display Sprite.png" id="2_p7d0h"]
+[ext_resource type="LabelSettings" uid="uid://dfx47mhgtu1gm" path="res://Extras/pixel_font.tres" id="3_kw61y"]
+
+[node name="SunDisplay" type="Node2D"]
+script = ExtResource("1_fy58x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 8)
+texture = ExtResource("2_p7d0h")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 18.0
+text = "1000"
+label_settings = ExtResource("3_kw61y")
+horizontal_alignment = 2

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://b44gytlkjctgy"]
+
+[ext_resource type="PackedScene" uid="uid://kb4603igeiwg" path="res://Presets/base_seed_packet.tscn" id="1_xge1y"]
+[ext_resource type="PackedScene" uid="uid://dre2g83qymoep" path="res://Plants/peashooter.tscn" id="2_oovrg"]
+[ext_resource type="Shader" uid="uid://od5bqyi64hk3" path="res://Extras/seed_shader.gdshader" id="3_2vs2f"]
+[ext_resource type="PackedScene" uid="uid://duwynkmnniatk" path="res://Silhouettes/peashooter_silh.tscn" id="3_8aluo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qteue"]
+resource_local_to_scene = true
+shader = ExtResource("3_2vs2f")
+shader_parameter/cooldown_ratio = 0.0
+shader_parameter/can_afford = 1.0
+shader_parameter/is_selected = 0.0
+
+[node name="PeashooterSeed" instance=ExtResource("1_xge1y")]
+plant_type = ExtResource("2_oovrg")
+sun_cost = 100
+cooldown_time = 5.0
+silhouette = ExtResource("3_8aluo")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_qteue")
+
+[node name="Label" parent="." index="2"]
+text = "100"

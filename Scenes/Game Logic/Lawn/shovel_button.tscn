@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://f5pxap41gjt"]
+
+[ext_resource type="Texture2D" uid="uid://fv76cr820fw3" path="res://PvZ Sprites/Shovel Slot Sprite.png" id="1_4itcr"]
+[ext_resource type="Script" uid="uid://c4ggs0xytr6qw" path="res://shovel.gd" id="1_wg60j"]
+[ext_resource type="Texture2D" uid="uid://eoqfbo6bk2j1" path="res://PvZ Sprites/Shovel Sprite.png" id="2_wg60j"]
+[ext_resource type="PackedScene" uid="uid://bpt3oi4olyq6r" path="res://Components/shader_component.tscn" id="4_8fjcr"]
+
+[node name="ShovelButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 30.0
+offset_bottom = 20.0
+script = ExtResource("1_wg60j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 10)
+texture = ExtResource("1_4itcr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(15, 10)
+texture = ExtResource("2_wg60j")
+offset = Vector2(0, 0.5)
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("affected_sprites") instance=ExtResource("4_8fjcr")]
+affected_sprites = [NodePath("../Sprite2D2")]

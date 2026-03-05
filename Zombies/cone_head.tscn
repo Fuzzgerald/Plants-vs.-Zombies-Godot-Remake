@@ -1,0 +1,432 @@
+[gd_scene load_steps=20 format=3 uid="uid://wyg2g24pk6c3"]
+
+[ext_resource type="PackedScene" uid="uid://dhk2egydce3h" path="res://Presets/base_zombie.tscn" id="1_ok4nk"]
+[ext_resource type="Script" uid="uid://cer6x8q3c7bsa" path="res://Scripts/zombie_stage_data.gd" id="2_7mar1"]
+[ext_resource type="PackedScene" uid="uid://bo2wpe3poy7c3" path="res://Zombie Objects/zombie_head.tscn" id="3_xcvr0"]
+[ext_resource type="PackedScene" uid="uid://dyqru4dkntytd" path="res://Zombie Objects/zombie_arm.tscn" id="4_uwe1f"]
+[ext_resource type="PackedScene" uid="uid://luxhgwrwhc54" path="res://Zombie Objects/broken_cone.tscn" id="5_ykyyd"]
+[ext_resource type="Texture2D" uid="uid://cxgphrvgp63fe" path="res://PvZ Sprites/Conehead Sprite.png" id="6_e6xol"]
+[ext_resource type="Texture2D" uid="uid://b8fbekex23ih7" path="res://PvZ Sprites/Zombie Sprite.png" id="7_2k2qk"]
+[ext_resource type="Texture2D" uid="uid://4j3g1vb2d8dh" path="res://PvZ Sprites/zombie fall.png" id="8_qwds6"]
+
+[sub_resource type="Resource" id="Resource_vihn4"]
+script = ExtResource("2_7mar1")
+spawns_object = true
+object_type = ExtResource("3_xcvr0")
+metadata/_custom_type_script = "uid://cer6x8q3c7bsa"
+
+[sub_resource type="Resource" id="Resource_183bq"]
+script = ExtResource("2_7mar1")
+stage_health = 100
+spawns_object = true
+object_type = ExtResource("4_uwe1f")
+metadata/_custom_type_script = "uid://cer6x8q3c7bsa"
+
+[sub_resource type="Resource" id="Resource_vfed5"]
+script = ExtResource("2_7mar1")
+stage_health = 200
+spawns_object = true
+object_type = ExtResource("5_ykyyd")
+metadata/_custom_type_script = "uid://cer6x8q3c7bsa"
+
+[sub_resource type="Resource" id="Resource_36mh7"]
+script = ExtResource("2_7mar1")
+stage_health = 300
+metadata/_custom_type_script = "uid://cer6x8q3c7bsa"
+
+[sub_resource type="Resource" id="Resource_r8tem"]
+script = ExtResource("2_7mar1")
+stage_health = 400
+metadata/_custom_type_script = "uid://cer6x8q3c7bsa"
+
+[sub_resource type="Resource" id="Resource_o1rti"]
+script = ExtResource("2_7mar1")
+stage_health = 500
+metadata/_custom_type_script = "uid://cer6x8q3c7bsa"
+
+[sub_resource type="Animation" id="Animation_0fqyq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RegularSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeadSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FullConeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CrackedConeSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [21]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BrokenConeSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [35]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("NoArmSprite:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [21]
+}
+
+[sub_resource type="Animation" id="Animation_wah7y"]
+resource_name = "regular_eat"
+length = 1.05
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RegularSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19, 20]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.525),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_eat_plant"
+}, {
+"args": [],
+"method": &"_eat_plant"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FullConeSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 13]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CrackedConeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26, 27]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BrokenConeSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [35, 36, 37, 38, 39, 40, 41]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("NoArmSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [21, 22, 23, 24, 25, 26, 27]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DeadSprite:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45000002, 0.6, 0.75, 0.90000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 14, 0]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_fall"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dnhlw"]
+resource_name = "fall"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DeadSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_py52u"]
+resource_name = "regular_walk"
+length = 2.4
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RegularSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FullConeSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrackedConeSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17, 18, 19]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BrokenConeSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31, 32, 33]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NoArmSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DeadSprite:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_fall"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kw4xq"]
+_data = {
+&"RESET": SubResource("Animation_0fqyq"),
+&"eat": SubResource("Animation_wah7y"),
+&"fall": SubResource("Animation_dnhlw"),
+&"walk": SubResource("Animation_py52u")
+}
+
+[node name="ConeHead" instance=ExtResource("1_ok4nk")]
+
+[node name="HealthComponent" parent="." index="0"]
+max_health = 500
+
+[node name="ZombieStageManager" parent="." index="3" node_paths=PackedStringArray("sprites")]
+stages = Array[ExtResource("2_7mar1")]([SubResource("Resource_vihn4"), SubResource("Resource_183bq"), SubResource("Resource_vfed5"), SubResource("Resource_36mh7"), SubResource("Resource_r8tem"), SubResource("Resource_o1rti")])
+sprites = [NodePath("../DeadSprite"), NodePath("../NoArmSprite"), NodePath("../RegularSprite"), NodePath("../BrokenConeSprite"), NodePath("../CrackedConeSprite"), NodePath("../FullConeSprite")]
+
+[node name="ShaderComponent" parent="." index="4" node_paths=PackedStringArray("affected_sprites")]
+affected_sprites = [NodePath("../FullConeSprite"), NodePath("../CrackedConeSprite"), NodePath("../BrokenConeSprite"), NodePath("../RegularSprite"), NodePath("../NoArmSprite"), NodePath("../DeadSprite")]
+
+[node name="FullConeSprite" type="Sprite2D" parent="." index="6"]
+position = Vector2(0, -24)
+texture = ExtResource("6_e6xol")
+hframes = 7
+vframes = 6
+
+[node name="CrackedConeSprite" type="Sprite2D" parent="." index="7"]
+visible = false
+position = Vector2(0, -24)
+texture = ExtResource("6_e6xol")
+hframes = 7
+vframes = 6
+frame = 21
+
+[node name="BrokenConeSprite" type="Sprite2D" parent="." index="8"]
+visible = false
+position = Vector2(0, -24)
+texture = ExtResource("6_e6xol")
+hframes = 7
+vframes = 6
+frame = 35
+
+[node name="RegularSprite" type="Sprite2D" parent="." index="9"]
+visible = false
+position = Vector2(0, -24)
+texture = ExtResource("7_2k2qk")
+hframes = 7
+vframes = 4
+
+[node name="NoArmSprite" type="Sprite2D" parent="." index="10"]
+visible = false
+position = Vector2(0, -24)
+texture = ExtResource("7_2k2qk")
+hframes = 7
+vframes = 4
+frame = 21
+
+[node name="DeadSprite" type="Sprite2D" parent="." index="11"]
+visible = false
+position = Vector2(0, -24)
+texture = ExtResource("8_qwds6")
+hframes = 6
+vframes = 3
+frame = 6
+
+[node name="AnimationPlayer" parent="." index="12"]
+libraries = {
+&"": SubResource("AnimationLibrary_kw4xq")
+}

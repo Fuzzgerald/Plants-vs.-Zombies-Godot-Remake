@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyqru4dkntytd"]
+
+[ext_resource type="PackedScene" uid="uid://bx0vl665n6fti" path="res://Presets/base_zombie_object.tscn" id="1_3gafi"]
+
+[node name="ZombieArm" instance=ExtResource("1_3gafi")]
+arc_y_offset = 18.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -14)

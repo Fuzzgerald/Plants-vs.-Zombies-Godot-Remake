@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvhrps0pnbo0"]
+
+[ext_resource type="Script" uid="uid://bo12pyqby763j" path="res://Scripts/plant.gd" id="1_71qtg"]
+[ext_resource type="PackedScene" uid="uid://bj0gt3tnaumvh" path="res://Components/health_component.tscn" id="2_b820q"]
+[ext_resource type="PackedScene" uid="uid://1ldigaq3fr62" path="res://Components/hitbox_component.tscn" id="3_vf5lo"]
+[ext_resource type="PackedScene" uid="uid://bpt3oi4olyq6r" path="res://Components/shader_component.tscn" id="4_4k614"]
+[ext_resource type="PackedScene" uid="uid://hwbg5itxwrgi" path="res://Components/y_sort_component.tscn" id="5_glcjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0e7v"]
+
+[node name="Plant" type="Node2D" node_paths=PackedStringArray("health_component") groups=["plants"]]
+script = ExtResource("1_71qtg")
+health_component = NodePath("HealthComponent")
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("shader") instance=ExtResource("2_b820q")]
+max_health = 1
+shader = NodePath("../ShaderComponent")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_vf5lo")]
+collision_layer = 2
+collision_mask = 4
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_b0e7v")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("affected_sprites") instance=ExtResource("4_4k614")]
+affected_sprites = [NodePath("../Sprite2D")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Y_SortComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("5_glcjf")]
+position = Vector2(105.63495, 83.03492)
+parent = NodePath("..")

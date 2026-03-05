@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7w7pcokbg7an"]
+
+[ext_resource type="Script" uid="uid://b2panb8jo8c1c" path="res://Scripts/zombie_spawner.gd" id="1_wm5uu"]
+
+[node name="LaneSpawner" type="Node2D"]
+script = ExtResource("1_wm5uu")
+quick_wait = 1.5
+regular_wait = 10.0
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

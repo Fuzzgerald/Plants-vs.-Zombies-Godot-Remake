@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgnfgo875285b"]
+
+[ext_resource type="PackedScene" uid="uid://d377h41nivaed" path="res://Presets/base_button.tscn" id="1_d8ial"]
+[ext_resource type="Texture2D" uid="uid://bknkq3qo7bpa7" path="res://PvZ Sprites/Back To Game Button.png" id="2_doe8o"]
+
+[node name="BackToGameButton" instance=ExtResource("1_d8ial")]
+offset_right = 140.0
+offset_bottom = 28.0
+function_type = 1
+white_strength = 0.1
+
+[node name="ShaderComponent" parent="." index="0" node_paths=PackedStringArray("affected_sprites")]
+affected_sprites = [NodePath("../Sprite2D")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(70, 14)
+texture = ExtResource("2_doe8o")

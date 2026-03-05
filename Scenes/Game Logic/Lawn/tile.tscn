@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvnit2pcnefqd"]
+
+[ext_resource type="Script" uid="uid://dc2ovgboro3pv" path="res://Scripts/tile.gd" id="1_rvq8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsjyq"]
+size = Vector2(26, 32)
+
+[node name="Tile" type="Area2D" node_paths=PackedStringArray("marker")]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_rvq8p")
+marker = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(13, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, 16)
+shape = SubResource("RectangleShape2D_xsjyq")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

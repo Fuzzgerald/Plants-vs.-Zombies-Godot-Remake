@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqd2i2bb4mmp8"]
+
+[ext_resource type="Script" uid="uid://b5y3fy1hh7g5k" path="res://Scripts/zombie_manager.gd" id="1_oi8dg"]
+[ext_resource type="Resource" uid="uid://cvvg8cpro3xnt" path="res://Waves/level_1_waves.tres" id="2_0m4gi"]
+
+[node name="ZombieManager" type="Node2D"]
+script = ExtResource("1_oi8dg")
+wave_preset = ExtResource("2_0m4gi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+autostart = true

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://6485oj36jg5l"]
+
+[ext_resource type="Script" uid="uid://bfgofiw625cmh" path="res://Scripts/pea.gd" id="1_erxna"]
+[ext_resource type="Texture2D" uid="uid://dvrjymkhxmmdw" path="res://PvZ Sprites/Progectiles Set1 Sprites.png" id="2_oinys"]
+[ext_resource type="Script" uid="uid://df5vbe0mdp4pl" path="res://Scripts/detection_component.gd" id="3_yl0ln"]
+[ext_resource type="PackedScene" uid="uid://hwbg5itxwrgi" path="res://Components/y_sort_component.tscn" id="4_csdg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dj2uw"]
+size = Vector2(10, 10)
+
+[node name="Pea" type="Node2D"]
+script = ExtResource("1_erxna")
+speed = 125
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("2_oinys")
+hframes = 13
+
+[node name="DetectionComponent" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("3_yl0ln")
+target_type = 1
+metadata/_custom_type_script = "uid://df5vbe0mdp4pl"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionComponent"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_dj2uw")
+
+[node name="Y_SortComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("4_csdg1")]
+y_offset = 5
+parent = NodePath("..")

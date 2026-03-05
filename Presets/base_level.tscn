@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpvtb6657yfpt"]
+
+[ext_resource type="PackedScene" uid="uid://cxobkgjuijluk" path="res://Scenes/Game Logic/Lawn/lawn.tscn" id="1_mq4w8"]
+[ext_resource type="PackedScene" uid="uid://ufq62d3fll1v" path="res://Scenes/Game Logic/Managers/plant_placement_manager.tscn" id="1_pfo03"]
+[ext_resource type="PackedScene" uid="uid://bqd2i2bb4mmp8" path="res://Scenes/Game Logic/Managers/zombie_manager.tscn" id="2_nhj8s"]
+[ext_resource type="PackedScene" uid="uid://m12q8d3rpp26" path="res://Scenes/Game Logic/Lawn/sun_display.tscn" id="2_opnvg"]
+[ext_resource type="PackedScene" uid="uid://btyelf07w0f32" path="res://Scenes/Game Logic/Lawn/pause_button.tscn" id="3_7f3d8"]
+[ext_resource type="PackedScene" uid="uid://b44gytlkjctgy" path="res://Seed Packets/peashooter_seed.tscn" id="4_7f3d8"]
+[ext_resource type="PackedScene" uid="uid://bp8rgbmxud18r" path="res://Seed Packets/sunflower_seed.tscn" id="5_36wjo"]
+[ext_resource type="PackedScene" uid="uid://mp4hgvm71tye" path="res://Seed Packets/wallnut_seed.tscn" id="6_5ixs6"]
+[ext_resource type="PackedScene" uid="uid://xeoq1qcfc25d" path="res://Scenes/Game Logic/Lawn/progress_bar.tscn" id="7_2r2l5"]
+[ext_resource type="PackedScene" uid="uid://f5pxap41gjt" path="res://Scenes/Game Logic/Lawn/shovel_button.tscn" id="8_vrcjx"]
+
+[node name="BaseLevel" type="Node2D"]
+
+[node name="PlantPlacementManager" parent="." instance=ExtResource("1_pfo03")]
+
+[node name="ZombieManager" parent="." instance=ExtResource("2_nhj8s")]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Lawn" parent="Objects" instance=ExtResource("1_mq4w8")]
+
+[node name="SunDisplay" parent="Objects" instance=ExtResource("2_opnvg")]
+position = Vector2(45, 25)
+
+[node name="PeashooterSeed" parent="Objects" instance=ExtResource("4_7f3d8")]
+offset_left = 45.0
+offset_top = 57.0
+offset_right = 69.0
+offset_bottom = 77.0
+
+[node name="SunflowerSeed" parent="Objects" instance=ExtResource("5_36wjo")]
+offset_left = 45.0
+offset_top = 89.0
+offset_right = 69.0
+offset_bottom = 109.0
+
+[node name="WallnutSeed" parent="Objects" instance=ExtResource("6_5ixs6")]
+offset_left = 45.0
+offset_top = 121.0
+offset_right = 69.0
+offset_bottom = 141.0
+
+[node name="ProgressBar" parent="Objects" instance=ExtResource("7_2r2l5")]
+position = Vector2(224, 12)
+
+[node name="ShovelButton" parent="Objects" instance=ExtResource("8_vrcjx")]
+offset_left = 123.0
+offset_top = 3.0
+offset_right = 153.0
+offset_bottom = 23.0
+
+[node name="PauseButton2" parent="Objects" instance=ExtResource("3_7f3d8")]
+offset_left = 295.0
+offset_top = 3.0
+offset_right = 315.0
+offset_bottom = 23.0

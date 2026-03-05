@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxlfdc6xambsj"]
+
+[ext_resource type="Texture2D" uid="uid://nrhj7tfnr3t8" path="res://PvZ Sprites/Ready Set Plant Sprite.png" id="1_xp1an"]
+
+[sub_resource type="Animation" id="Animation_c8k44"]
+resource_name = "anim"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_d2a3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xryos"]
+_data = {
+&"RESET": SubResource("Animation_d2a3f"),
+&"anim": SubResource("Animation_c8k44")
+}
+
+[node name="ReadySetPlant" type="Sprite2D"]
+position = Vector2(163, 96)
+texture = ExtResource("1_xp1an")
+vframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xryos")
+}
+autoplay = "anim"

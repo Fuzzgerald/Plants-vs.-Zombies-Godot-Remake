@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca0ugjrsi5yhl"]
+
+[ext_resource type="PackedScene" uid="uid://d377h41nivaed" path="res://Presets/base_button.tscn" id="1_uyi1t"]
+[ext_resource type="PackedScene" uid="uid://bidhtfmfodq35" path="res://Scenes/main_menu.tscn" id="2_d56pt"]
+[ext_resource type="Texture2D" uid="uid://cm7lr2dgewrip" path="res://PvZ Sprites/Main Menu Button.png" id="3_s5ns2"]
+
+[node name="MainMenuButton" instance=ExtResource("1_uyi1t")]
+offset_right = 110.0
+offset_bottom = 18.0
+function_type = 2
+white_strength = 0.1
+load_scene = ExtResource("2_d56pt")
+
+[node name="ShaderComponent" parent="." index="0" node_paths=PackedStringArray("affected_sprites")]
+affected_sprites = [NodePath("../Sprite2D")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(55, 9)
+texture = ExtResource("3_s5ns2")

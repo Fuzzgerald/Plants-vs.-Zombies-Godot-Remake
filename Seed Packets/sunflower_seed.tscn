@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp8rgbmxud18r"]
+
+[ext_resource type="PackedScene" uid="uid://kb4603igeiwg" path="res://Presets/base_seed_packet.tscn" id="1_kf5gg"]
+[ext_resource type="PackedScene" uid="uid://yiwsioki0mmv" path="res://Plants/sunflower.tscn" id="2_5px8w"]
+[ext_resource type="Shader" uid="uid://od5bqyi64hk3" path="res://Extras/seed_shader.gdshader" id="3_3fkpj"]
+[ext_resource type="PackedScene" uid="uid://byd56chevqpvi" path="res://Silhouettes/sunflower_silh.tscn" id="3_qdenk"]
+[ext_resource type="Texture2D" uid="uid://ccuun5kcl4m6d" path="res://PvZ Sprites/Sunflower Seed.png" id="4_51smo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ap4p"]
+resource_local_to_scene = true
+shader = ExtResource("3_3fkpj")
+shader_parameter/cooldown_ratio = 0.0
+shader_parameter/can_afford = 1.0
+shader_parameter/is_selected = 0.0
+
+[node name="SunflowerSeed" instance=ExtResource("1_kf5gg")]
+plant_type = ExtResource("2_5px8w")
+sun_cost = 50
+cooldown_time = 5.0
+silhouette = ExtResource("3_qdenk")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("ShaderMaterial_2ap4p")
+position = Vector2(12, 8)
+texture = ExtResource("4_51smo")
+
+[node name="Label" parent="." index="2"]
+text = "50"

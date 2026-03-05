@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxobkgjuijluk"]
+
+[ext_resource type="Texture2D" uid="uid://chmgydhw4ssb8" path="res://PvZ Sprites/Lawn Sprite.png" id="1_silp4"]
+[ext_resource type="PackedScene" uid="uid://blcxtvrgcrblm" path="res://Scenes/Game Logic/Lawn/tile_grid.tscn" id="5_y45xa"]
+[ext_resource type="PackedScene" uid="uid://dvpr6buf3afdh" path="res://Scenes/Game Logic/Lawn/sun_spawner.tscn" id="7_20bih"]
+[ext_resource type="PackedScene" uid="uid://b7w7pcokbg7an" path="res://Scenes/Game Logic/Lawn/lane_spawner.tscn" id="8_22yfn"]
+
+[node name="Lawn" type="Node2D"]
+z_as_relative = false
+
+[node name="LawnSprite" type="Sprite2D" parent="."]
+position = Vector2(163, 96)
+texture = ExtResource("1_silp4")
+
+[node name="TileGrid" parent="." instance=ExtResource("5_y45xa")]
+position = Vector2(81, 25)
+
+[node name="SunSpawner" parent="." instance=ExtResource("7_20bih")]
+position = Vector2(81, 25)
+
+[node name="LaneSpawner" parent="." instance=ExtResource("8_22yfn")]
+position = Vector2(350, 47)
+
+[node name="LaneSpawner2" parent="." instance=ExtResource("8_22yfn")]
+position = Vector2(350, 78)
+
+[node name="LaneSpawner3" parent="." instance=ExtResource("8_22yfn")]
+position = Vector2(350, 111)
+
+[node name="LaneSpawner4" parent="." instance=ExtResource("8_22yfn")]
+position = Vector2(350, 143)
+
+[node name="LaneSpawner5" parent="." instance=ExtResource("8_22yfn")]
+position = Vector2(350, 175)

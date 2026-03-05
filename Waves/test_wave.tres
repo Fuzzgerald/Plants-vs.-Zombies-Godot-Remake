@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WavePreset" load_steps=9 format=3 uid="uid://dhc14725a3a6s"]
+
+[ext_resource type="Script" uid="uid://grpx8ds7xlj1" path="res://Scripts/wave_preset.gd" id="1_ljxda"]
+[ext_resource type="Script" uid="uid://bebeodla0oq6v" path="res://Scripts/wave_data.gd" id="2_81w1y"]
+[ext_resource type="Script" uid="uid://bgfonnj12dbst" path="res://Scripts/zombie_data.gd" id="3_5s4y3"]
+[ext_resource type="Resource" uid="uid://d2h08cjbaw7ui" path="res://Zombie Spawns/bucket_head_spawn.tres" id="4_aqtox"]
+[ext_resource type="Resource" uid="uid://dltyt3gmfj2si" path="res://Zombie Spawns/regular_spawn.tres" id="4_i5gp3"]
+[ext_resource type="Resource" uid="uid://dn3u6owaysxk0" path="res://Zombie Spawns/cone_head_spawn.tres" id="5_aqtox"]
+
+[sub_resource type="Resource" id="Resource_snbqs"]
+script = ExtResource("2_81w1y")
+zombies = Array[ExtResource("3_5s4y3")]([ExtResource("4_aqtox"), ExtResource("5_aqtox"), ExtResource("4_i5gp3")])
+can_autostart = true
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_5s4y3"]
+script = ExtResource("2_81w1y")
+zombies = Array[ExtResource("3_5s4y3")]([ExtResource("4_i5gp3"), ExtResource("4_i5gp3"), ExtResource("4_i5gp3"), ExtResource("4_i5gp3"), ExtResource("5_aqtox")])
+can_autostart = true
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[resource]
+script = ExtResource("1_ljxda")
+waves = Array[ExtResource("2_81w1y")]([SubResource("Resource_snbqs"), SubResource("Resource_5s4y3")])
+metadata/_custom_type_script = "uid://grpx8ds7xlj1"

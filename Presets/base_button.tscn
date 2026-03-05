@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d377h41nivaed"]
+
+[ext_resource type="Script" uid="uid://cmgqppft3223r" path="res://menu_button.gd" id="1_b5eig"]
+[ext_resource type="PackedScene" uid="uid://bpt3oi4olyq6r" path="res://Components/shader_component.tscn" id="2_4gf43"]
+
+[node name="BaseButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b5eig")
+
+[node name="ShaderComponent" parent="." instance=ExtResource("2_4gf43")]
+
+[connection signal="mouse_entered" from="." to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_mouse_exited"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpt3oi4olyq6r"]
+
+[ext_resource type="Script" uid="uid://bpm533y01tqhn" path="res://Scripts/shader_component.gd" id="1_8b43t"]
+[ext_resource type="Shader" uid="uid://dt8jio70jffk7" path="res://Extras/master_shader.gdshader" id="2_j2o2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocwnn"]
+shader = ExtResource("2_j2o2t")
+shader_parameter/white_tint = 0.0
+shader_parameter/grey_tint = 0.0
+shader_parameter/yellow_tint = 0.0
+shader_parameter/white_color = Color(1, 1, 1, 1)
+shader_parameter/grey_color = Color(0, 0, 0, 1)
+shader_parameter/yellow_color = Color(1, 1, 0.39215687, 1)
+
+[node name="ShaderComponent" type="Node2D"]
+script = ExtResource("1_8b43t")
+shader = SubResource("ShaderMaterial_ocwnn")

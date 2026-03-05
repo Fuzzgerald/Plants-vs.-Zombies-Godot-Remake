@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://eneeyj27qq03"]
+
+[ext_resource type="Texture2D" uid="uid://dn5f73g0f76bn" path="res://PvZ Sprites/Pause Menu Sprite.png" id="1_odtn0"]
+[ext_resource type="PackedScene" uid="uid://gf8v1u61w15w" path="res://UI/restart_level_button.tscn" id="3_1pafb"]
+[ext_resource type="PackedScene" uid="uid://bgnfgo875285b" path="res://UI/back_to_game_button.tscn" id="3_c2qun"]
+[ext_resource type="PackedScene" uid="uid://ca0ugjrsi5yhl" path="res://UI/main_menu_button.tscn" id="4_1pafb"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 326.0
+offset_bottom = 192.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(165, 96)
+texture = ExtResource("1_odtn0")
+
+[node name="BackToGameButton" parent="." instance=ExtResource("3_c2qun")]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 137.0
+offset_right = 234.0
+offset_bottom = 165.0
+
+[node name="RestartLevelButton" parent="." instance=ExtResource("3_1pafb")]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 70.0
+offset_right = 220.0
+offset_bottom = 88.0
+
+[node name="MainMenuButton" parent="." instance=ExtResource("4_1pafb")]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 102.0
+offset_right = 220.0
+offset_bottom = 120.0

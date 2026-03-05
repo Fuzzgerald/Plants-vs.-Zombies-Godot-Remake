@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx0vl665n6fti"]
+
+[ext_resource type="Script" uid="uid://djqp1d0tvyhvv" path="res://Scripts/zombie_object.gd" id="1_cosun"]
+[ext_resource type="Texture2D" uid="uid://dvrjymkhxmmdw" path="res://PvZ Sprites/Progectiles Set1 Sprites.png" id="2_p6nfu"]
+[ext_resource type="PackedScene" uid="uid://hwbg5itxwrgi" path="res://Components/y_sort_component.tscn" id="3_p6nfu"]
+
+[node name="ZombieObject" type="Node2D"]
+script = ExtResource("1_cosun")
+arc_distance = 15.0
+arc_y_offset = 20.0
+arc_height = 25.0
+arc_duration = 0.7
+rotation_amount = 270.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+texture = ExtResource("2_p6nfu")
+hframes = 13
+frame = 10
+
+[node name="Y_SortComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_p6nfu")]
+y_offset = 5
+parent = NodePath("..")

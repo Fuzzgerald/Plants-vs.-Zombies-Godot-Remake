@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://dhk2egydce3h"]
+
+[ext_resource type="Script" uid="uid://b8uuk8ogvjags" path="res://Scripts/zombie.gd" id="1_y8rab"]
+[ext_resource type="PackedScene" uid="uid://bj0gt3tnaumvh" path="res://Components/health_component.tscn" id="2_e44c8"]
+[ext_resource type="Shader" uid="uid://cuhcuoyomdni1" path="res://Extras/character_shaders.gdshader" id="3_r8gxd"]
+[ext_resource type="PackedScene" uid="uid://1ldigaq3fr62" path="res://Components/hitbox_component.tscn" id="4_bj8c4"]
+[ext_resource type="PackedScene" uid="uid://pd2833yyujfo" path="res://Components/detection_component.tscn" id="5_hk76r"]
+[ext_resource type="PackedScene" uid="uid://fgp2ngo6mdb7" path="res://Components/zombie_stage_manager.tscn" id="6_2ksif"]
+[ext_resource type="PackedScene" uid="uid://bpt3oi4olyq6r" path="res://Components/shader_component.tscn" id="7_sb5gg"]
+[ext_resource type="PackedScene" uid="uid://hwbg5itxwrgi" path="res://Components/y_sort_component.tscn" id="8_j288d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ia6i"]
+shader = ExtResource("3_r8gxd")
+shader_parameter/flash_amount = 0.0
+shader_parameter/charge_amount = 0.0
+shader_parameter/charge_color = Color(1, 0.99, 0.95, 1)
+shader_parameter/fade = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4slyf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0k4e"]
+
+[node name="BaseZombie" type="Node2D" node_paths=PackedStringArray("stage_manager", "shader") groups=["zombies"]]
+script = ExtResource("1_y8rab")
+max_speed = 3
+zombie_damage = 50
+stage_manager = NodePath("ZombieStageManager")
+shader = NodePath("ShaderComponent")
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("shader") instance=ExtResource("2_e44c8")]
+material = SubResource("ShaderMaterial_5ia6i")
+max_health = 200
+shader = NodePath("../ShaderComponent")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_bj8c4")]
+collision_mask = 16
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_4slyf")
+
+[node name="DetectionComponent" parent="." instance=ExtResource("5_hk76r")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionComponent"]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_g0k4e")
+
+[node name="ZombieStageManager" parent="." instance=ExtResource("6_2ksif")]
+
+[node name="ShaderComponent" parent="." instance=ExtResource("7_sb5gg")]
+
+[node name="Y_SortComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("8_j288d")]
+y_offset = 2
+parent = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

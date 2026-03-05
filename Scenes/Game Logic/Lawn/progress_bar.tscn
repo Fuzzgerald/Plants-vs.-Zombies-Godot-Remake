@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://xeoq1qcfc25d"]
+
+[ext_resource type="Texture2D" uid="uid://dqd8gxhxqnrhi" path="res://PvZ Sprites/Progress Bar Sprite 1.png" id="1_dgrbr"]
+[ext_resource type="Script" uid="uid://wuxmogupnea3" path="res://progress_bar.gd" id="1_gs0ol"]
+[ext_resource type="Texture2D" uid="uid://bd5s4b2b4ijwy" path="res://PvZ Sprites/Progress Bar Sprite 2.png" id="2_gs0ol"]
+[ext_resource type="PackedScene" uid="uid://bpt3oi4olyq6r" path="res://Components/shader_component.tscn" id="3_l1doj"]
+
+[node name="ProgressBar" type="Node2D"]
+script = ExtResource("1_gs0ol")
+
+[node name="ProgressOutline" type="Sprite2D" parent="."]
+texture = ExtResource("1_dgrbr")
+offset = Vector2(0, 0.5)
+
+[node name="ProgressVisual" type="Sprite2D" parent="."]
+texture = ExtResource("2_gs0ol")
+offset = Vector2(0, 0.5)
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("affected_sprites") instance=ExtResource("3_l1doj")]
+affected_sprites = [NodePath("../ProgressVisual")]

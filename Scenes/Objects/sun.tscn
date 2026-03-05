@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://0dkjclsmreq2"]
+
+[ext_resource type="Script" uid="uid://b82s661t3l1y5" path="res://Scripts/sun.gd" id="1_fijf1"]
+[ext_resource type="Texture2D" uid="uid://dvrjymkhxmmdw" path="res://PvZ Sprites/Progectiles Set1 Sprites.png" id="2_jd8b8"]
+[ext_resource type="PackedScene" uid="uid://hwbg5itxwrgi" path="res://Components/y_sort_component.tscn" id="3_pwugt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh0p3"]
+size = Vector2(36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvbg4"]
+atlas = ExtResource("2_jd8b8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw71r"]
+atlas = ExtResource("2_jd8b8")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qh0p3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvbg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw71r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sun" type="Area2D"]
+z_index = 1
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_fijf1")
+fall_speed = 30
+arc_height = 25
+arc_distance = 20
+arc_y_offset = 20
+arc_duration = 0.8
+lifetime = 15.0
+fade_duration = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qh0p3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qh0p3")
+autoplay = "default"
+frame_progress = 0.3076071
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Y_SortComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_pwugt")]
+y_offset = 1000
+parent = NodePath("..")
+
+[connection signal="mouse_entered" from="." to="." method="_mouse_entered"]

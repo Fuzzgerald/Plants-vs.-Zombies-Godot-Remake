@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://byd56chevqpvi"]
+
+[ext_resource type="Texture2D" uid="uid://b0cihjawr3p7u" path="res://PvZ Sprites/Sunflower Sprite.png" id="1_a6fnb"]
+
+[node name="SunflowerSilh" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.49019608)
+position = Vector2(0, -9)
+texture = ExtResource("1_a6fnb")
+hframes = 6

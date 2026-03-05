@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://bigt5ymyhjh01"]
+
+[ext_resource type="Script" uid="uid://nk7ocn1c6h14" path="res://Scripts/wallnut.gd" id="1_hpyvj"]
+[ext_resource type="PackedScene" uid="uid://dvhrps0pnbo0" path="res://Presets/base_plant.tscn" id="1_imtc1"]
+[ext_resource type="Texture2D" uid="uid://dhcfar34wjehb" path="res://PvZ Sprites/Wallnut Sprite.png" id="5_10crm"]
+
+[sub_resource type="Animation" id="Animation_0m0sl"]
+resource_name = "full_idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="Animation" id="Animation_elleg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xipb5"]
+resource_name = "broken_idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 7]
+}
+
+[sub_resource type="Animation" id="Animation_odvpt"]
+resource_name = "cracked_idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ba5hv"]
+_data = {
+&"RESET": SubResource("Animation_elleg"),
+&"broken_idle": SubResource("Animation_xipb5"),
+&"cracked_idle": SubResource("Animation_odvpt"),
+&"full_idle": SubResource("Animation_0m0sl")
+}
+
+[node name="Wallnut" instance=ExtResource("1_imtc1")]
+script = ExtResource("1_hpyvj")
+
+[node name="HealthComponent" parent="." index="0"]
+max_health = 4000
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(0, -9)
+texture = ExtResource("5_10crm")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_ba5hv")
+}
+autoplay = "full_idle"

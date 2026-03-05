@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://gf8v1u61w15w"]
+
+[ext_resource type="PackedScene" uid="uid://d377h41nivaed" path="res://Presets/base_button.tscn" id="1_sp24q"]
+[ext_resource type="PackedScene" uid="uid://bpvtb6657yfpt" path="res://Presets/base_level.tscn" id="2_gnmv4"]
+[ext_resource type="Texture2D" uid="uid://bhbeiq00byfc0" path="res://PvZ Sprites/Restart Level Button.png" id="3_xamyn"]
+
+[node name="RestartLevelButton" instance=ExtResource("1_sp24q")]
+offset_right = 110.0
+offset_bottom = 18.0
+function_type = 2
+white_strength = 0.1
+load_scene = ExtResource("2_gnmv4")
+
+[node name="ShaderComponent" parent="." index="0" node_paths=PackedStringArray("affected_sprites")]
+affected_sprites = [NodePath("../Sprite2D")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(55, 9)
+texture = ExtResource("3_xamyn")

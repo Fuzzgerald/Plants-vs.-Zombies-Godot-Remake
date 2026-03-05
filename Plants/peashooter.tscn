@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://dre2g83qymoep"]
+
+[ext_resource type="PackedScene" uid="uid://dvhrps0pnbo0" path="res://Presets/base_plant.tscn" id="1_1i1cc"]
+[ext_resource type="Script" uid="uid://cib3bn2lx1otp" path="res://Scripts/peashooter.gd" id="2_xi35x"]
+[ext_resource type="Texture2D" uid="uid://c7wvshbuoy0b0" path="res://PvZ Sprites/Peashooter Sprite.png" id="3_f4o7w"]
+[ext_resource type="PackedScene" uid="uid://pd2833yyujfo" path="res://Components/detection_component.tscn" id="4_lguu0"]
+
+[sub_resource type="Animation" id="Animation_rlqy3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_6c5ws"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0, 3, 4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_2erce"]
+resource_name = "shoot"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 5, 6]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_shoot"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mjy5y"]
+_data = {
+&"RESET": SubResource("Animation_rlqy3"),
+&"idle": SubResource("Animation_6c5ws"),
+&"shoot": SubResource("Animation_2erce")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlqy3"]
+size = Vector2(326, 20)
+
+[node name="Peashooter" node_paths=PackedStringArray("silhouette_sprite") instance=ExtResource("1_1i1cc")]
+script = ExtResource("2_xi35x")
+silhouette_sprite = NodePath("Sprite2D")
+
+[node name="HealthComponent" parent="." index="0"]
+max_health = 300
+
+[node name="Sprite2D" parent="." index="3"]
+position = Vector2(0, -8)
+texture = ExtResource("3_f4o7w")
+hframes = 7
+frame = 1
+
+[node name="ShootingPoint" type="Marker2D" parent="." index="4"]
+position = Vector2(10, 0)
+gizmo_extents = 0.0
+
+[node name="AttackCooldown" type="Timer" parent="." index="5"]
+wait_time = 2.25
+one_shot = true
+
+[node name="AnimationPlayer" parent="." index="6"]
+libraries = {
+&"": SubResource("AnimationLibrary_mjy5y")
+}
+autoplay = "idle"
+
+[node name="DetectionComponent" parent="." index="7" instance=ExtResource("4_lguu0")]
+collision_layer = 0
+target_type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionComponent" index="0"]
+position = Vector2(163, -10)
+shape = SubResource("RectangleShape2D_rlqy3")
+
+[node name="Y_SortComponent" parent="." index="8"]
+position = Vector2(0, 0)

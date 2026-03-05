@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://luxhgwrwhc54"]
+
+[ext_resource type="PackedScene" uid="uid://bx0vl665n6fti" path="res://Presets/base_zombie_object.tscn" id="1_d5mmq"]
+
+[node name="BrokenCone" instance=ExtResource("1_d5mmq")]
+arc_distance = 20.0
+arc_y_offset = 34.0
+rotation_amount = 90.0
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(0, -34)
+rotation = 0.0
+frame = 8

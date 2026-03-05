@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ZombieData" load_steps=3 format=3 uid="uid://dn3u6owaysxk0"]
+
+[ext_resource type="Script" uid="uid://bgfonnj12dbst" path="res://Scripts/zombie_data.gd" id="1_n0ohd"]
+[ext_resource type="PackedScene" uid="uid://wyg2g24pk6c3" path="res://Zombies/cone_head.tscn" id="2_chmp3"]
+
+[resource]
+script = ExtResource("1_n0ohd")
+zombie_type = ExtResource("2_chmp3")
+checks = 5
+metadata/_custom_type_script = "uid://bgfonnj12dbst"

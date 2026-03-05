@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="WavePreset" load_steps=14 format=3 uid="uid://cvvg8cpro3xnt"]
+
+[ext_resource type="Script" uid="uid://bebeodla0oq6v" path="res://Scripts/wave_data.gd" id="1_t6oxp"]
+[ext_resource type="Script" uid="uid://grpx8ds7xlj1" path="res://Scripts/wave_preset.gd" id="1_tcngh"]
+[ext_resource type="Script" uid="uid://bgfonnj12dbst" path="res://Scripts/zombie_data.gd" id="2_tcngh"]
+[ext_resource type="Resource" uid="uid://dltyt3gmfj2si" path="res://Zombie Spawns/regular_spawn.tres" id="4_vbr6n"]
+[ext_resource type="Resource" uid="uid://dn3u6owaysxk0" path="res://Zombie Spawns/cone_head_spawn.tres" id="5_hba2d"]
+
+[sub_resource type="Resource" id="Resource_bsgy6"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n")])
+can_autostart = true
+time_delay = 60.0
+amount_of_checks = 1.0
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_oekng"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n")])
+can_autostart = true
+time_delay = 60.0
+amount_of_checks = 0.5
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_k5b0r"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n")])
+can_autostart = true
+time_delay = 30.0
+amount_of_checks = 0.5
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_4cd7q"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("5_hba2d")])
+can_autostart = true
+time_delay = 60.0
+amount_of_checks = 0.6
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_fai5g"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n"), ExtResource("4_vbr6n")])
+can_autostart = true
+time_delay = 40.0
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_vbr6n"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n"), ExtResource("5_hba2d")])
+can_autostart = true
+time_delay = 20.0
+amount_of_checks = 0.4
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_hba2d"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n"), ExtResource("4_vbr6n"), ExtResource("4_vbr6n")])
+amount_of_checks = 1.0
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[sub_resource type="Resource" id="Resource_aoiha"]
+script = ExtResource("1_t6oxp")
+zombies = Array[ExtResource("2_tcngh")]([ExtResource("4_vbr6n"), ExtResource("4_vbr6n"), ExtResource("4_vbr6n"), ExtResource("4_vbr6n"), ExtResource("4_vbr6n"), ExtResource("5_hba2d"), ExtResource("5_hba2d")])
+amount_of_checks = 0.9
+metadata/_custom_type_script = "uid://bebeodla0oq6v"
+
+[resource]
+script = ExtResource("1_tcngh")
+waves = Array[ExtResource("1_t6oxp")]([SubResource("Resource_bsgy6"), SubResource("Resource_oekng"), SubResource("Resource_k5b0r"), SubResource("Resource_4cd7q"), SubResource("Resource_fai5g"), SubResource("Resource_vbr6n"), SubResource("Resource_hba2d"), SubResource("Resource_aoiha")])
+metadata/_custom_type_script = "uid://grpx8ds7xlj1"

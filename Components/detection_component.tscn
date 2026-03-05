@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pd2833yyujfo"]
+
+[ext_resource type="Script" uid="uid://df5vbe0mdp4pl" path="res://Scripts/detection_component.gd" id="1_ukmwm"]
+
+[node name="DetectionComponent" type="Area2D"]
+script = ExtResource("1_ukmwm")

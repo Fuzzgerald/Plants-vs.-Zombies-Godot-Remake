@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://7q1wj70llvm6"]
+
+[ext_resource type="Script" uid="uid://cfrdimfu5ypj8" path="res://UI.gd" id="1_oon5t"]
+[ext_resource type="PackedScene" uid="uid://eneeyj27qq03" path="res://UI/pause_menu.tscn" id="2_riauq"]
+[ext_resource type="PackedScene" uid="uid://cxlfdc6xambsj" path="res://UI/ready_set_plant.tscn" id="3_igtgk"]
+
+[node name="UIManager" type="Node2D"]
+process_mode = 3
+z_index = 4096
+script = ExtResource("1_oon5t")
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_riauq")]
+visible = false
+
+[node name="ReadySetPlant" parent="." instance=ExtResource("3_igtgk")]
+frame = 2

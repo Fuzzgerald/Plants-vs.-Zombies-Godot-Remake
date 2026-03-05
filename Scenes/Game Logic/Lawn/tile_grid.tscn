@@ -1,0 +1,139 @@
+[gd_scene load_steps=2 format=3 uid="uid://blcxtvrgcrblm"]
+
+[ext_resource type="PackedScene" uid="uid://bvnit2pcnefqd" path="res://Scenes/Game Logic/Lawn/tile.tscn" id="1_kree5"]
+
+[node name="TileGrid" type="Node2D"]
+
+[node name="Tile" parent="." instance=ExtResource("1_kree5")]
+
+[node name="Tile2" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(26, 0)
+
+[node name="Tile3" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(52, 0)
+
+[node name="Tile4" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(78, 0)
+
+[node name="Tile5" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(104, 0)
+
+[node name="Tile6" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(130, 0)
+
+[node name="Tile7" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(156, 0)
+
+[node name="Tile8" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(182, 0)
+
+[node name="Tile9" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(208, 0)
+
+[node name="Tile10" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(0, 32)
+
+[node name="Tile11" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(26, 32)
+
+[node name="Tile12" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(52, 32)
+
+[node name="Tile13" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(78, 32)
+
+[node name="Tile14" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(104, 32)
+
+[node name="Tile15" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(130, 32)
+
+[node name="Tile16" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(156, 32)
+
+[node name="Tile17" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(182, 32)
+
+[node name="Tile18" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(208, 32)
+
+[node name="Tile19" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(0, 64)
+
+[node name="Tile20" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(26, 64)
+
+[node name="Tile21" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(52, 64)
+
+[node name="Tile22" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(78, 64)
+
+[node name="Tile23" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(104, 64)
+
+[node name="Tile24" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(130, 64)
+
+[node name="Tile25" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(156, 64)
+
+[node name="Tile26" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(182, 64)
+
+[node name="Tile27" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(208, 64)
+
+[node name="Tile28" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(0, 96)
+
+[node name="Tile29" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(26, 96)
+
+[node name="Tile30" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(52, 96)
+
+[node name="Tile31" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(78, 96)
+
+[node name="Tile32" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(104, 96)
+
+[node name="Tile33" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(130, 96)
+
+[node name="Tile34" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(156, 96)
+
+[node name="Tile35" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(182, 96)
+
+[node name="Tile36" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(208, 96)
+
+[node name="Tile37" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(0, 128)
+
+[node name="Tile38" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(26, 128)
+
+[node name="Tile39" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(52, 128)
+
+[node name="Tile40" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(78, 128)
+
+[node name="Tile41" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(104, 128)
+
+[node name="Tile42" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(130, 128)
+
+[node name="Tile43" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(156, 128)
+
+[node name="Tile44" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(182, 128)
+
+[node name="Tile45" parent="." instance=ExtResource("1_kree5")]
+position = Vector2(208, 128)
