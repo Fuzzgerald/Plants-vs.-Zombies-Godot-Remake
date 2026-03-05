@@ -15,15 +15,15 @@ func _input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	):
 		match  game_mngr.plant_mngr.click_type:
 			
-			game_mngr.plant_mngr.click_types.none:
+			game_mngr.plant_mngr.ClickTypes.none:
 				return
 				
-			game_mngr.plant_mngr.click_types.plant:
+			game_mngr.plant_mngr.ClickTypes.plant:
 				game_mngr.plant_mngr._place_plant(self)
 				
-			game_mngr.plant_mngr.click_types.shovel:
+			game_mngr.plant_mngr.ClickTypes.shovel:
 				if current_plant:
-					game_mngr.plant_mngr.click_type = game_mngr.plant_mngr.click_types.none
+					game_mngr.plant_mngr.click_type = game_mngr.plant_mngr.ClickTypes.none
 				_clear_tile()
 				
 				
@@ -50,7 +50,7 @@ func _on_mouse_entered() -> void:
 	
 	if (
 		can_place and 
-		game_mngr.plant_mngr.click_type == game_mngr.plant_mngr.click_types.plant
+		game_mngr.plant_mngr.click_type == game_mngr.plant_mngr.ClickTypes.plant
 		):
 		
 		silhouette_inst = game_mngr.plant_mngr.silhouettte.instantiate()
@@ -60,7 +60,7 @@ func _on_mouse_entered() -> void:
 		
 	if(
 		current_plant and 
-		game_mngr.plant_mngr.click_type == game_mngr.plant_mngr.click_types.shovel
+		game_mngr.plant_mngr.click_type == game_mngr.plant_mngr.ClickTypes.shovel
 	):
 		
 		current_plant.health_component.shader._set_white(0.25)
@@ -75,4 +75,3 @@ func _on_mouse_exited() -> void:
 	if current_plant:
 		
 		current_plant.health_component.shader._set_white(0)
-

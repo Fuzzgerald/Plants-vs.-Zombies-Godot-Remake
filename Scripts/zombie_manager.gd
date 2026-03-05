@@ -5,9 +5,6 @@ signal checks_cleared
 
 @export var wave_preset: WavePreset
 
-var zombies: Array[ZombieData] = []
-var lanes: Array[ZombieSpawner] = []
-
 var total_checks: int
 var checks_reached: int
 var required_checks: float
@@ -15,6 +12,9 @@ var wave_index: int
 var current_wave: Wave
 var amount_of_waves: int
 var progress: float = 0.0
+
+var zombies: Array[ZombieData] = []
+var lanes: Array[ZombieSpawner] = []
 
 @onready var timer:= $Timer
 

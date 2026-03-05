@@ -4,9 +4,8 @@ extends Node2D
 @export var quick_wait: float
 @export var regular_wait: float
 
-var zombie_queue: Array[PackedScene] = []
-
 var zombie_count: int
+var zombie_queue: Array[PackedScene] = []
 
 @onready var timer : Timer = $Timer
 @onready var spawn_point := $SpawnPoint

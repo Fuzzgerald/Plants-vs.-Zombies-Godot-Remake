@@ -1,12 +1,12 @@
 ﻿extends Control
 
-enum functions {
+enum Functions {
 	pause,
 	unpause,
 	load_scene,
 }
 
-@export var function_type: functions
+@export var function_type: Functions
 @export var white_strength: float = 0.25
 @export var load_scene: PackedScene
 
@@ -30,14 +30,13 @@ func _get_function():
 	
 	match function_type:
 		
-		functions.pause:
+		Functions.pause:
 			ui_manager._pause_game()
 			
-		functions.unpause:
+		Functions.unpause:
 			ui_manager._unpause()
 			
-		functions.load_scene:
+		Functions.load_scene:
 			game_mngr._load_scene(load_scene)
 			ui_manager._unpause()
 			
-

@@ -53,7 +53,7 @@ func _on_gui_input(event: InputEvent) -> void:
 	and event.pressed
 	):
 		if is_selected:
-			game_mngr.plant_mngr._change_click(game_mngr.plant_mngr.click_types.none)
+			game_mngr.plant_mngr._change_click(game_mngr.plant_mngr.ClickTypes.none)
 		else:
 			game_mngr.plant_mngr._get_new_plant(self)
 		
@@ -84,4 +84,3 @@ func _cooldown_finished():
 	on_cooldown = false
 	
 	
-

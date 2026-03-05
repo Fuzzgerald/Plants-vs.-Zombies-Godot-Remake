@@ -3,17 +3,17 @@ extends Area2D
 
 signal target_connected 
 
-enum target_types {
+enum TargetTypes {
 	plants,
 	zombies
 }
 
-@export var target_type: target_types
+@export var target_type: TargetTypes
 @export var max_x: int = 325
 
+var target_body: Node2D
 var pending_bodies: Array[Node2D] = []
 var bodies_in_range: Array[Node2D] = []
-var target_body: Node2D
 
 func _ready() -> void:
 	area_entered.connect(_area_entered)
@@ -65,10 +65,10 @@ func _valid_target(body: Node2D):
 	
 	match target_type:
 		
-		target_types.plants:
+		TargetTypes.plants:
 			return body.is_in_group("plants")
 			
-		target_types.zombies:
+		TargetTypes.zombies:
 			return body.is_in_group("zombies")
 	return false
 
@@ -86,13 +86,13 @@ func _area_entered(area: Area2D) -> void:
 	
 	
 func _sort_bodies():
-	if target_type == target_types.plants:
+	if target_type == TargetTypes.plants:
 		bodies_in_range.sort_custom(
 			func(a, b):
 			return a.global_position.x > b.global_position.x
 )
 	
-	if target_type == target_types.zombies:
+	if target_type == TargetTypes.zombies:
 		bodies_in_range.sort_custom(
 			func(a, b):
 			return a.global_position.x < b.global_position.x
@@ -113,4 +113,3 @@ func _choose_target():
 	target_body = bodies_in_range[0]
 	target_connected.emit()
 	
-
